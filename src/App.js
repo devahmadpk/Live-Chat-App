@@ -3,6 +3,7 @@ import './App.css';
 // import Banner from './components/Banner';
 // import Search from './components/Search';
 import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       {/* <Banner/>
       <Search /> */}
-      <SignIn />
+      {/* <SignIn /> */}
+      <SignUp />
     </div>
   )
 }

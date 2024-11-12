@@ -1,7 +1,7 @@
 
 import '../stylesheets/signin.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -16,8 +16,8 @@ const SignIn = () => {
             <div className="form-div">
                 <div className='form-element'>
                     
-                     <FontAwesomeIcon icon={faUser} className='icon'/>
-                    <input placeholder="Username"></input>
+                     <FontAwesomeIcon icon={faEnvelope} className='icon'/>
+                    <input placeholder="Email"></input>
                 </div>
 
                 <div className='form-element'>
