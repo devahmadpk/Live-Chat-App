@@ -1,0 +1,41 @@
+
+
+.banner {
+    /* background-color: pink; */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner h3 {
+    font-size: 24px;
+}
+
+.banner .button-div button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.banner .button-div .create {
+    color: #0047AB;
+    background-color: #E1EBEE;
+}
+
+.banner .button-div .signout {
+    color: #BA0021;
+    background-color: #FFCCCB;
+}
+
+@media only screen and (max-width: 500px) {
+    .banner .button-div button {
+        font-size: 18px;
+        padding: 8px 15px;
+        border-radius: 10px;
+        border: none;
+        margin: 8px;
+    }
+}
