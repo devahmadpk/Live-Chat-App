@@ -41,6 +41,10 @@ const SignUp = () => {
       });
   
       console.log('User signed up and data saved to Firestore');
+      alert('Account created successfully');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
       
       // Redirect or show success message here
     } catch (err) {

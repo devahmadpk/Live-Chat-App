@@ -9,10 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Banner/>
-      <Search /> */}
-      {/* <SignIn /> */}
-      <SignUp />
+      <SignIn />
     </div>
   )
 }
