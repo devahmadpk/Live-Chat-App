@@ -3,17 +3,20 @@ import { auth, firestore } from '../firebase/firebaseConfig'; // Import Firebase
 import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore'; // Firestore methods
 import { createUserWithEmailAndPassword } from 'firebase/auth'; // Firebase auth method
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase/compat/app';
+import { useNavigate } from 'react-router-dom';
 import '../stylesheets/signup.css';
 
 const SignUp = () => {
   // State variables for input fields
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   // Handle form submission
   const handleSignUp = async (e) => {
@@ -35,6 +38,7 @@ const SignUp = () => {
   
       // Save additional data (e.g., name, email) to Firestore
       await setDoc(doc(collection(firestore, 'users'), user.uid), {
+        userName, // Store username
         email, // Store email
         password, // Store password
         createdAt: serverTimestamp() // Store account creation timestamp
@@ -42,6 +46,7 @@ const SignUp = () => {
   
       console.log('User signed up and data saved to Firestore');
       alert('Account created successfully');
+      setUserName('');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
@@ -67,6 +72,18 @@ const SignUp = () => {
       </div>
 
       <form onSubmit={handleSignUp} className="form-div">
+        {/* User input */}
+        <div className='form-element'>
+          <FontAwesomeIcon icon={faUser} className='icon' />
+          <input
+            type="text"
+            placeholder="Username"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+          />
+        </div>
+
         {/* Email input */}
         <div className='form-element'>
           <FontAwesomeIcon icon={faEnvelope} className='icon' />
@@ -113,7 +130,7 @@ const SignUp = () => {
       </form>
 
       <div className="bottom-div">
-        <p>Already have an account? <span><a href="/login">Login</a></span></p>
+        <p>Already have an account? <span><a href='/'>Login</a></span></p>
       </div>
     </div>
   );
