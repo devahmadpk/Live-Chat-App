@@ -1,0 +1,27 @@
+
+.chat-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* background-color: teal; */
+}
+
+.chat-scroll-panel {
+    /* background-color: pink; */
+    max-width: 350px;
+    min-width: 350px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.chat-scroll-panel,
+.chat-panel {
+    padding: 20px 0;
+    min-height: 70vh;
+    margin-top: 20px;
+}
+
+.chat-panel {
+    width: 100%;
+    /* background-color: pink; */
+}
