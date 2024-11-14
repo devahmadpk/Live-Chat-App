@@ -14,6 +14,7 @@ const SignIn = () => {
   const [user, setUser] = useState(null); // initially null to track auth state
   const navigate = useNavigate();
 
+
   // Handle form submission
   const handleSignIn = async (e) => {
     e.preventDefault();
