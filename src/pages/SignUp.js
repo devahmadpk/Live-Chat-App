@@ -35,10 +35,14 @@ const SignUp = () => {
       // Create a new user using Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+
+      const formattedUserName = userName.trim();
+      const capitalizedUserName = formattedUserName.charAt(0).toUpperCase() + formattedUserName.slice(1).toLowerCase();
   
       // Save additional data (e.g., name, email) to Firestore
       await setDoc(doc(collection(firestore, 'users'), user.uid), {
-        userName, // Store username
+        uid: user.uid,
+        userName: capitalizedUserName, // Store username
         email, // Store email
         password, // Store password
         createdAt: serverTimestamp() // Store account creation timestamp
