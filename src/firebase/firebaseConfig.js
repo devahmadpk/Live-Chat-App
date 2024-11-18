@@ -20,6 +20,7 @@ const app = firebase.initializeApp(firebaseConfig);
 // Get Firebase Auth and Firestore instances
 const auth = getAuth(app);
 const firestore = getFirestore(app);
+const db = getFirestore(app);
 
 // Export the instances for use in other parts of the app
-export { auth, firestore };
+export { auth, firestore, db };
