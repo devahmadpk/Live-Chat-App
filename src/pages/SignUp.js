@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'; // Firebase auth
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase/compat/app';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../stylesheets/signup.css';
 
 const SignUp = () => {
@@ -134,7 +134,7 @@ const SignUp = () => {
       </form>
 
       <div className="bottom-div">
-        <p>Already have an account? <span><a href='/'>Login</a></span></p>
+        <p>Already have an account? <span><Link to={'/'}>Login</Link></span></p>
       </div>
     </div>
   );

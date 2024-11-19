@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from '../firebase/firebaseConfig'; // Import Firebase auth instance
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'; // Firebase auth methods
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import '../stylesheets/signin.css';
@@ -88,7 +88,7 @@ const SignIn = () => {
       </form>
 
       <div className="bottom-div">
-        <p>Don't have an account? <span><a href="/signup">Sign Up</a></span></p>
+        <p>Don't have an account? <span><Link to={'/signup'}>Sign Up</Link></span></p>
       </div>
     </div>
   );
