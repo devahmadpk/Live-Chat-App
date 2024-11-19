@@ -32,6 +32,7 @@ const Banner = () => {
 
         getUserName();
     }, [auth, db]);
+    console.log(`${userName}`);
 
     const signOutIcon = <FontAwesomeIcon icon={faRightFromBracket} />;
 
