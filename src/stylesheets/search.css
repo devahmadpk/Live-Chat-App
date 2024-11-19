@@ -30,6 +30,41 @@
     color: #909090;
 }
 
+.user-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-dropdown-wrapper {
+    width: 50%;
+    background-color: #fff;
+    padding: 10px 0;
+    z-index: 10;
+    position: absolute;
+    top: 140px;
+    border: 1px solid grey;
+    height: auto;
+    /* Remove this to expose users list */
+    /* display: none; */
+}
+
+.searched-user {
+    /* border: 1px solid grey; */
+    margin: 5px 0;
+    text-align: left;
+    padding: 5px 20px;
+    background-color: 	#F5F5F5;
+}
+
+.searched-user:hover {
+    background-color: #F8F8F8;
+}
+
+.searched-user p, h3 {
+    margin: 5px;
+}
+
 @media only screen and (max-width: 600px) {
     .search-wrapper {
         width: 80%;
