@@ -23,7 +23,7 @@
 }
 
 .chat-history {
-    max-height: 60vh;
+    min-height: 60vh;
 }
 
 .chat-controls {
