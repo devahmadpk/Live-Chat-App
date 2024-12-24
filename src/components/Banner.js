@@ -1,7 +1,6 @@
 import '../stylesheets/banner.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import { auth } from '../firebase/firebaseConfig'; // Import Firebase auth instance
 import { signOut, getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -32,7 +31,6 @@ const Banner = () => {
 
         getUserName();
     }, [auth, db]);
-    console.log(`${userName}`);
 
     const signOutIcon = <FontAwesomeIcon icon={faRightFromBracket} />;
 
@@ -40,7 +38,6 @@ const Banner = () => {
     const handleSignOut = async () => {
         try {
             await signOut(auth);
-            console.log('User signed out successfully');
             navigate('/'); // Redirect to the sign-in page
         } catch (err) {
             console.error('Error signing out:', err);

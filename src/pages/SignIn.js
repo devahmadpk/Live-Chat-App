@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { auth } from '../firebase/firebaseConfig'; // Import Firebase auth instance
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'; // Firebase auth methods
+import { signInWithEmailAndPassword } from 'firebase/auth'; // Firebase auth methods
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
@@ -23,11 +23,11 @@ const SignIn = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log('User signed in successfully');
       setUser(auth.currentUser); // update the user state
       navigate('/home')
     } catch (err) {
       console.error('Error signing in:', err);
+      alert('Error signing in')
 
       // Enhanced error handling
       switch (err.code) {

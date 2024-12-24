@@ -4,7 +4,6 @@ import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore'; /
 import { createUserWithEmailAndPassword } from 'firebase/auth'; // Firebase auth method
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
-import firebase from 'firebase/compat/app';
 import { Link, useNavigate } from 'react-router-dom';
 import '../stylesheets/signup.css';
 
@@ -54,7 +53,7 @@ const SignUp = () => {
       setEmail('');
       setPassword('');
       setConfirmPassword('');
-      
+      navigate('/');
       // Redirect or show success message here
     } catch (err) {
       console.error('Error signing up:', err);

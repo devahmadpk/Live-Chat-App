@@ -34,7 +34,17 @@ const Search = ({ onSelectUser }) => {
     };
 
     const handleKey = (e) => {
-        if (e.code === 'Enter') handleSearch();
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+    
+    const handleInputChange = (e) => {
+        setUserName(e.target.value);
+        // Optionally trigger search on change (e.g., debounce could be added)
+        if (e.target.value === '') {
+            setUserResults([]);
+        }
     };
 
     const handleSelect = async (usr) => {
@@ -83,7 +93,7 @@ const Search = ({ onSelectUser }) => {
                         className="search-box"
                         placeholder="Search"
                         onKeyDown={handleKey}
-                        onChange={(e) => setUserName(e.target.value)}
+                        onChange={handleInputChange}
                         value={userName}
                         ref={inputRef}
                     />
